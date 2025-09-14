@@ -25,6 +25,14 @@ PS C:\Users\Gerku\Documents\Programming_projects\web_applications\Backend_interv
 
 Logi w aws.amazon.com/cloudwatch (logs/log groups):
 
+| ID Zadania | Logi CloudWatch | Wniosek |
+| :--- | :--- | :--- |
+| **`task-2`** | `INFO [Processor] Picking up task task-2...`<br>`INFO [Processor] Task task-2 processed successfully.` | **Pomyślne przetworzenie.** Zadanie zostało odebrane i pomyślnie zakończone. |
+| **`task-3`** | `INFO [Processor] Picking up task task-3...`<br>`ERROR [Processor] Task task-3 failed.`<br>`ERROR Invoke Error { ... "errorMessage": "Simulated processing error." ... }`<br><br>(Po chwili, druga próba)<br><br>`INFO [Processor] Picking up task task-3...`<br>`ERROR [Processor] Task task-3 failed.` | **Symulowany błąd i ponowna próba.** Pierwsza próba zakończyła się błędem. SQS automatycznie ponowiło próbę, która również się nie powiodła. To zadanie prawdopodobnie trafiło do DLQ. |
+| **`task-4`** | `INFO [Processor] Picking up task task-4...`<br>`ERROR [Processor] Task task-4 failed.`<br>`ERROR Invoke Error { ... "errorMessage": "Simulated processing error." ... }`<br><br>(Po chwili, druga próba)<br><br>`INFO [Processor] Picking up task task-4...`<br>`INFO [Processor] Task task-4 processed successfully.` | **Błąd, ale ponowna próba zakończona sukcesem.** Pierwsza próba nie powiodła się, ale system był odporny i druga próba zakończyła się sukcesem. |
+| **`task-5`** | `INFO [Processor] Picking up task task-5...`<br>`INFO [Processor] Task task-5 processed successfully.` | **Pomyślne przetworzenie.** |
+| **`task-6`** | `INFO [Processor] Picking up task task-6...`<br>`ERROR [Processor] Task task-6 failed.`<br>`INFO [Processor] Picking up task task-6...`<br>`INFO [Processor] Task task-6 processed successfully.` | **Błąd, ale ponowna próba zakończona sukcesem.** |
+
 2025-09-14T17:27:56.049+02:00
 INIT_START Runtime Version: nodejs:20.v75	Runtime Version ARN: arn:aws:lambda:us-east-1::runtime:1ffa4c233e75382c8a39aa96770f3b81af75cba9794a5c2a1750c1ee63cdfe10
 
