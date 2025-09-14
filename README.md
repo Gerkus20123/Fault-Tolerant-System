@@ -47,3 +47,6 @@ Wyślij zadanie do API, aby zobaczyć, jak jest pomyślnie przetwarzane.
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"taskId": "test-1", "payload": {"user": "test-user", "action": "test-success"}}' [URL_TWOJEGO_API_GATEWAY]/submit-task
+
+
+Aby zobaczyć pełne logi z testowania, przejdź do [pliku logów](test_logs.md).
