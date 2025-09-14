@@ -1,5 +1,14 @@
 Logi w VSC:
 
+| Żądanie | ID Zadania | Odpowiedź API Gateway / SQS | Wniosek |
+| :--- | :--- | :--- | :--- |
+| `curl ... task-1` | `task-1` | `{"...":"401b6898..."}` | Sukces: API Gateway przekazało żądanie, a `submitTask` wysłało wiadomość do SQS. |
+| `curl ... task-2` | `task-2` | `{"...":"df04ca56..."}`` | Sukces: Kolejne zadanie wysłane. |
+| `curl ... task-3` | `task-3` | `{"...":"927ff8ab..."}` | Sukces: Kolejne zadanie wysłane. |
+| `curl ... task-4` | `task-4` | `{"...":"404d4b67..."}` | Sukces: Kolejne zadanie wysłane. |
+| `curl ... task-5` | `task-5` | `{"...":"de1b276c..."}` | Sukces: Kolejne zadanie wysłane. |
+| `curl ... task-6` | `task-6` | `{"...":"d2351e0f..."}` | Sukces: Kolejne zadanie wysłane. |
+
 PS C:\Users\Gerku\Documents\Programming_projects\web_applications\Backend_interview_task> curl -X POST -H "Content-Type: application/json" -d '{"taskId": "task-1", "payload": {"user": "Gerku", "action": "test-aws"}}' https://2pyjnjib0b.execute-api.us-east-1.amazonaws.com/v1/submit-task
 {"$metadata":{"httpStatusCode":200,"requestId":"63d78e03-5938-529c-be5a-ef4384bb39a2","attempts":1,"totalRetryDelay":0},"MD5OfMessageBody":"a56a5e6bfbb49b0dd1bf1a472a4c098c","MessageId":"401b6898-4d53-47d3-ac2d-d621e3458e23"}
 PS C:\Users\Gerku\Documents\Programming_projects\web_applications\Backend_interview_task> curl -X POST -H "Content-Type: application/json" -d '{"taskId": "task-2", "payload": {"user": "Gerku", "action": "test-aws"}}' https://2pyjnjib0b.execute-api.us-east-1.amazonaws.com/v1/submit-task
