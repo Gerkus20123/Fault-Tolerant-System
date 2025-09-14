@@ -1,0 +1,75 @@
+service: fault-tolerant-system-v1
+
+provider:
+  name: aws
+  runtime: nodejs20.x # Or whatever Node.js version you are using
+  region: us-east-1    # Choose your desired AWS region
+  stage: dev           # Deployment stage
+  environment:
+    PROCESSING_FAILURE_RATE: 0.3
+    MAX_RETRIES: 2
+  profile: serverless-task
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action: "sqs:SendMessage"
+          Resource:
+            Fn::GetAtt: [TaskQueue, Arn]
+
+custom:
+  esbuild:
+    bundle: true
+    minify: true
+    sourcemap: true
+    target: node20
+    external: ['aws-sdk']
+
+functions:
+  submitTask:
+    handler: src/submitTask.handler
+    environment:
+      QUEUE_URL:
+        Ref: TaskQueue
+    events:
+      - http:
+          path: submit-task
+          method: post
+          cors: true
+
+  processTask:
+    handler: src/processTask.handler
+    events:
+      - sqs:
+          arn:
+            Fn::GetAtt: [TaskQueue, Arn] # Connects to the SQS queue
+          batchSize: 1
+
+  dlqMonitor:
+    handler: src/dlqMonitor.handler
+    events:
+      - sqs:
+          arn:
+            Fn::GetAtt: [DLQ, Arn] # Listens to the DLQ
+
+package:
+  individually: true
+  patterns:
+    - 'src/**'
+    - 'node_modules/**'
+    - '!node_modules/aws-sdk/**'
+    
+resources:
+  Resources:
+    TaskQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: TaskQueue
+        RedrivePolicy:
+          deadLetterTargetArn:
+            Fn::GetAtt: [DLQ, Arn]
+          maxReceiveCount: 2
+    DLQ:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: DLQ
