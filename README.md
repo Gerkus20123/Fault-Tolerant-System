@@ -1,6 +1,7 @@
 # Fault-Tolerant System v1
 
 To jest skalowalny i odporny na błędy system przetwarzania zadań, zbudowany w oparciu o architekturę event-driven z użyciem usług AWS. System symuluje przetwarzanie danych, gdzie błędy są automatycznie obsługiwane, a zadania, które nie mogą być przetworzone, trafiają do kolejki DLQ.
+W procesie budowania tego systemu wykorzystałem AI do przyspieszenia niektórych etapów, takich jak generowanie początkowego szablonu i debugowanie problemów z konfiguracją. Jednak ostateczne rozwiązanie, a także zrozumienie i poprawienie błędów, było wynikiem moich własnych umiejętności.
 
 ## 🚀 Wymagania wstępne
 
