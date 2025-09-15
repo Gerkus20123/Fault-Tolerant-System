@@ -1,0 +1,23 @@
+timestamp,message
+1757922835128,"INIT_START Runtime Version: nodejs:20.v75	Runtime Version ARN: arn:aws:lambda:us-east-1::runtime:1ffa4c233e75382c8a39aa96770f3b81af75cba9794a5c2a1750c1ee63cdfe10
+"
+1757922835264,"START RequestId: c7912953-de6b-54e1-bd78-48121628bf3c Version: $LATEST
+"
+1757922835265,"2025-09-15T07:53:55.265Z	c7912953-de6b-54e1-bd78-48121628bf3c	INFO	-----------------------------------------
+"
+1757922835268,"2025-09-15T07:53:55.268Z	c7912953-de6b-54e1-bd78-48121628bf3c	INFO	[DLQ Monitoring] New failed tasks detected:
+"
+1757922835268,"2025-09-15T07:53:55.268Z	c7912953-de6b-54e1-bd78-48121628bf3c	INFO	- Task ID: task-nr_3
+"
+1757922835268,"2025-09-15T07:53:55.268Z	c7912953-de6b-54e1-bd78-48121628bf3c	INFO	  Payload: {""user"":""Gerku"",""action"":""test-aws""}
+"
+1757922835268,"2025-09-15T07:53:55.268Z	c7912953-de6b-54e1-bd78-48121628bf3c	INFO	  Error: undefined
+"
+1757922835268,"2025-09-15T07:53:55.268Z	c7912953-de6b-54e1-bd78-48121628bf3c	INFO	  Timestamp: undefined
+"
+1757922835268,"2025-09-15T07:53:55.268Z	c7912953-de6b-54e1-bd78-48121628bf3c	INFO	-----------------------------------------
+"
+1757922835270,"END RequestId: c7912953-de6b-54e1-bd78-48121628bf3c
+"
+1757922835270,"REPORT RequestId: c7912953-de6b-54e1-bd78-48121628bf3c	Duration: 6.03 ms	Billed Duration: 139 ms	Memory Size: 1024 MB	Max Memory Used: 68 MB	Init Duration: 132.88 ms	
+"

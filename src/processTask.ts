@@ -24,6 +24,10 @@ export const handler = async (event: any) => {
       // Logika przeniesienia zadania do DLQ jest obsługiwana automatycznie przez SQS.
       // SQS automatycznie ponawia próbę (zgodnie z konfiguracją w serverless.yml)
       // i przenosi do DLQ po wyczerpaniu limitu.
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 5b4420ba45ec83b5a72308fa838b64e86f85806e
       throw new Error(errorMessage);
 
     } else {
