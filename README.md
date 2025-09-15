@@ -86,4 +86,10 @@ Ten projekt został stworzony przy wsparciu sztucznej inteligencji, która pełn
 * Dokumentacji: Tworzenie opisów architektonicznych i instrukcji testowania.
 Wykorzystanie AI w tym projekcie pozwoliło na szybsze i bardziej efektywne rozwiązanie złożonych problemów technicznych, co jest zgodne z nowoczesnymi praktykami inżynierii oprogramowania.
 
+## Rreview:
 
+![Zrzut ekranu](1.png)
+
+![Zrzut ekranu](2.png)
+
+![Zrzut ekranu](3.png)
