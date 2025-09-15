@@ -1,5 +1,6 @@
 <div align="center">
-# Fault-Tolerant System v1
+    <img src="https://example.com/your-icon.png" width="100" height="100" alt="Ikonka">
+    # Fault-Tolerant System v1
 </div>
 
 To jest skalowalny i odporny na błędy system przetwarzania zadań, zbudowany w oparciu o architekturę event-driven z użyciem usług Amazon Web Services (AWS). System symuluje przetwarzanie danych, gdzie błędy są automatycznie 
