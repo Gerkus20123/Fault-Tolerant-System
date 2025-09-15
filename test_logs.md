@@ -1,6 +1,13 @@
 Logi w VSC:
 
-
+| Data i czas (lokalny: +02:00) |	ID żądania (Request ID) |	Czas trwania (Duration) |	Status	| Wniosek |
+| :--- | :--- | :--- | :--- | :--- |
+| 2025-09-15T09:52:34.203+02:00 |	56cc2e63...	| 127.94 ms |	END	| Pierwsze uruchomienie. Dłuższy czas trwania spowodowany cold start. |
+| 2025-09-15T09:52:44.695+02:00	| ffec821d...	| 47.21 ms	| END	| Kolejne żądanie. Znacznie krótszy czas trwania po cold start. |
+| 2025-09-15T09:52:54.714+02:00	| d50430e7...	| 10.07 ms	| END	| Zoptymalizowany czas trwania. |
+| 2025-09-15T09:53:03.021+02:00	| 70946b09...	| 38.44 ms	| END	| Zoptymalizowany czas trwania. |
+| 2025-09-15T09:53:11.514+02:00	| 7187d090...	| 9.78 ms	| END	| Zoptymalizowany czas trwania. |
+| 2025-09-15T09:53:20.452+02:00	| 2f720efd...	| 12.66 ms	| END	| Zoptymalizowany czas trwania. |
 
 
 
