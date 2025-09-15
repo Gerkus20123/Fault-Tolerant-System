@@ -9,14 +9,14 @@ Logi w VSC:
 | `curl ... task-5` | `task-5` | `{"...":"de1b276c..."}` | Sukces: Kolejne zadanie wysłane. |
 | `curl ... task-6` | `task-6` | `{"...":"d2351e0f..."}` | Sukces: Kolejne zadanie wysłane. |
 
-| ID Zadania |	Logi CloudWatch | Wniosek | 
-| :--- | :--- | :--- |
-| `task-nr_1`	| `INFO [Processor] Picking up task task-nr_1...<br>INFO [Processor] Task task-nr_1 processed successfully.`	| Pomyślne przetworzenie. Zadanie zostało odebrane i pomyślnie zakończone. | 
-| `task-nr_2`	| `INFO [Processor] Picking up task task-nr_2...<br>INFO [Processor] Task task-nr_2 processed successfully.`	| Pomyślne przetworzenie. | 
-| `task-nr_3`	| `INFO [Processor] Picking up task task-nr_3...<br>ERROR [Processor] Task task-nr_3 failed.<br>ERROR Invoke Error { ... "errorMessage": "Simulated processing error." ... }<br><br>(Po chwili, druga próba)<br><br>INFO [Processor] Picking up task task-nr_3...<br>ERROR [Processor] Task task-nr_3 failed.	Symulowany błąd i ponowna próba. Pierwsza próba zakończyła się błędem. SQS automatycznie ponowiło próbę, która również się nie powiodła. To zadanie prawdopodobnie trafiło do DLQ.`
-| `task-nr_4`	| `INFO [Processor] Picking up task task-nr_4...<br>INFO [Processor] Task task-nr_4 processed successfully.`	| Pomyślne przetworzenie. | 
-| `task-nr_5`	| `INFO [Processor] Picking up task task-nr_5...<br>INFO [Processor] Task task-nr_5 processed successfully.`	| Pomyślne przetworzenie. | 
-| `task-nr_6`	| `INFO [Processor] Picking up task task-nr_6...<br>INFO [Processor] Task task-nr_6 processed successfully.`	| Pomyślne przetworzenie. | 
+| Data | ID Zadania |	Logi CloudWatch | Wniosek | 
+| :--- | :--- | :--- | :--- |
+| 2025-09-15T09:52:34.997+02:00 | `task-nr_1`	| `INFO [Processor] Picking up task task-nr_1...<br>INFO [Processor] Task task-nr_1 processed successfully.`	| Pomyślne przetworzenie. Zadanie zostało odebrane i pomyślnie zakończone. | 
+| 2025-09-15T09:52:44.774+02:00 | `task-nr_2`	| `INFO [Processor] Picking up task task-nr_2...<br>INFO [Processor] Task task-nr_2 processed successfully.`	| Pomyślne przetworzenie. | 
+| 2025-09-15T09:52:54.742+02:00 | `task-nr_3`	| `INFO [Processor] Picking up task task-nr_3...<br>ERROR [Processor] Task task-nr_3 failed.<br>ERROR Invoke Error { ... "errorMessage": "Simulated processing error." ... }<br><br>(Po chwili, druga próba)<br><br>INFO [Processor] Picking up task task-nr_3...<br>ERROR [Processor] Task task-nr_3 failed.	Symulowany błąd i ponowna próba. Pierwsza próba zakończyła się błędem. SQS automatycznie ponowiło próbę, która również się nie powiodła. To zadanie prawdopodobnie trafiło do DLQ.`
+| 2025-09-15T09:53:03.082+02:00 | `task-nr_4`	| `INFO [Processor] Picking up task task-nr_4...<br>INFO [Processor] Task task-nr_4 processed successfully.`	| Pomyślne przetworzenie. | 
+| 2025-09-15T09:53:11.534+02:00 | `task-nr_5`	| `INFO [Processor] Picking up task task-nr_5...<br>INFO [Processor] Task task-nr_5 processed successfully.`	| Pomyślne przetworzenie. | 
+| 2025-09-15T09:53:20.479+02:00 | `task-nr_6`	| `INFO [Processor] Picking up task task-nr_6...<br>INFO [Processor] Task task-nr_6 processed successfully.`	| Pomyślne przetworzenie. | 
 
 PS C:\Users\Gerku\Documents\Programming_projects\web_applications\Backend_interview_task> curl -X POST -H "Content-Type: application/json" -d '{"taskId": "task-1", "payload": {"user": "Gerku", "action": "test-aws"}}' https://2pyjnjib0b.execute-api.us-east-1.amazonaws.com/v1/submit-task
 {"$metadata":{"httpStatusCode":200,"requestId":"63d78e03-5938-529c-be5a-ef4384bb39a2","attempts":1,"totalRetryDelay":0},"MD5OfMessageBody":"a56a5e6bfbb49b0dd1bf1a472a4c098c","MessageId":"401b6898-4d53-47d3-ac2d-d621e3458e23"}
