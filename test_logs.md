@@ -1,4 +1,4 @@
-Logi w VSC:
+Logi w VSC (submitTask):
 
 | Data i czas (lokalny: +02:00) |	ID żądania (Request ID) |	Czas trwania (Duration) |	Status	| Wniosek |
 | :--- | :--- | :--- | :--- | :--- |
@@ -11,7 +11,7 @@ Logi w VSC:
 
 
 
-Logi w aws.amazon.com/cloudwatch (logs/log groups):
+Logi w aws.amazon.com/cloudwatch (logs/log groups) (processTask):
 
 | Data | ID Zadania |	Logi CloudWatch | Wniosek | 
 | :--- | :--- | :--- | :--- |
