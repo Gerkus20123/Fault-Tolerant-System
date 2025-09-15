@@ -22,3 +22,9 @@ Logi w aws.amazon.com/cloudwatch (logs/log groups) (processTask):
 | 2025-09-15T09:53:11.534+02:00 | `task-nr_5`	| `INFO [Processor] Picking up task task-nr_5...<br>INFO [Processor] Task task-nr_5 processed successfully.`	| Pomyślne przetworzenie. | 
 | 2025-09-15T09:53:20.479+02:00 | `task-nr_6`	| `INFO [Processor] Picking up task task-nr_6...<br>INFO [Processor] Task task-nr_6 processed successfully.`	| Pomyślne przetworzenie. | 
 
+Logi DLQ ():
+
+| Data i czas (lokalny: +02:00)	| ID Zadania	| Detale	| Wniosek | 
+| :--- | :--- | :--- | :--- |
+| 2025-09-15T09:53:55.268+02:00 | task-nr_3	| Payload:<br> {"user": "Gerku", "action": "test-aws"}<br>Błąd:<br> Simulated processing error.	| Zadanie task-nr_3 trafiło do DLQ.<br>Potwierdza to, że system retry działa poprawnie i po nieudanych próbach przekazuje wadliwe wiadomości do kolejki błędów, zapobiegając blokowaniu systemu. | 
+
