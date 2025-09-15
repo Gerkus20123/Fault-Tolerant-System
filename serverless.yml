@@ -1,13 +1,13 @@
 service: fault-tolerant-system-v1
 
 provider:
-  name: aws
-  runtime: nodejs20.x # Or whatever Node.js version you are using
-  region: us-east-1    # Choose your desired AWS region
-  stage: dev           # Deployment stage
+  name: aws 
+  runtime: nodejs20.x
+  region: us-east-1    # AWS region
+  stage: dev           # Deployment stage - development
   environment:
-    PROCESSING_FAILURE_RATE: 0.3
-    MAX_RETRIES: 2
+    PROCESSING_FAILURE_RATE: 0.3 # 30% prawdopodbeństwo błedu
+    MAX_RETRIES: 2 # maksymalna liczba powtózeń
   profile: serverless-task
   iam:
     role:
@@ -42,7 +42,7 @@ functions:
     events:
       - sqs:
           arn:
-            Fn::GetAtt: [TaskQueue, Arn] # Connects to the SQS queue
+            Fn::GetAtt: [TaskQueue, Arn] # Połączenie z SQS
           batchSize: 1
 
   dlqMonitor:
@@ -50,7 +50,7 @@ functions:
     events:
       - sqs:
           arn:
-            Fn::GetAtt: [DLQ, Arn] # Listens to the DLQ
+            Fn::GetAtt: [DLQ, Arn] # Nadsłuchiwanie DLQ
 
 package:
   individually: true
