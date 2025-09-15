@@ -9,6 +9,14 @@ Logi w VSC:
 | `curl ... task-5` | `task-5` | `{"...":"de1b276c..."}` | Sukces: Kolejne zadanie wysłane. |
 | `curl ... task-6` | `task-6` | `{"...":"d2351e0f..."}` | Sukces: Kolejne zadanie wysłane. |
 
+| ID Zadania |	Logi CloudWatch | Wniosek | 
+| task-nr_1	| INFO [Processor] Picking up task task-nr_1...<br>INFO [Processor] Task task-nr_1 processed successfully.	| Pomyślne przetworzenie. Zadanie zostało odebrane i pomyślnie zakończone.| 
+| task-nr_2	| INFO [Processor] Picking up task task-nr_2...<br>INFO [Processor] Task task-nr_2 processed successfully.	| Pomyślne przetworzenie.| 
+| task-nr_3	| INFO [Processor] Picking up task task-nr_3...<br>ERROR [Processor] Task task-nr_3 failed.<br>ERROR Invoke Error { ... "errorMessage": "Simulated processing error." ... }<br><br>(Po chwili, druga próba)<br><br>INFO [Processor] Picking up task task-nr_3...<br>ERROR [Processor] Task task-nr_3 failed.	Symulowany błąd i ponowna próba. Pierwsza próba zakończyła się błędem. SQS automatycznie ponowiło próbę, która również się nie powiodła. To zadanie prawdopodobnie trafiło do DLQ.
+| task-nr_4	| INFO [Processor] Picking up task task-nr_4...<br>INFO [Processor] Task task-nr_4 processed successfully.	| Pomyślne przetworzenie.| 
+| task-nr_5	| INFO [Processor] Picking up task task-nr_5...<br>INFO [Processor] Task task-nr_5 processed successfully.	| Pomyślne przetworzenie.| 
+| task-nr_6	| INFO [Processor] Picking up task task-nr_6...<br>INFO [Processor] Task task-nr_6 processed successfully.	| Pomyślne przetworzenie.| 
+
 PS C:\Users\Gerku\Documents\Programming_projects\web_applications\Backend_interview_task> curl -X POST -H "Content-Type: application/json" -d '{"taskId": "task-1", "payload": {"user": "Gerku", "action": "test-aws"}}' https://2pyjnjib0b.execute-api.us-east-1.amazonaws.com/v1/submit-task
 {"$metadata":{"httpStatusCode":200,"requestId":"63d78e03-5938-529c-be5a-ef4384bb39a2","attempts":1,"totalRetryDelay":0},"MD5OfMessageBody":"a56a5e6bfbb49b0dd1bf1a472a4c098c","MessageId":"401b6898-4d53-47d3-ac2d-d621e3458e23"}
 PS C:\Users\Gerku\Documents\Programming_projects\web_applications\Backend_interview_task> curl -X POST -H "Content-Type: application/json" -d '{"taskId": "task-2", "payload": {"user": "Gerku", "action": "test-aws"}}' https://2pyjnjib0b.execute-api.us-east-1.amazonaws.com/v1/submit-task
@@ -20,8 +28,6 @@ PS C:\Users\Gerku\Documents\Programming_projects\web_applications\Backend_interv
 PS C:\Users\Gerku\Documents\Programming_projects\web_applications\Backend_interview_task> curl -X POST -H "Content-Type: application/json" -d '{"taskId": "task-5", "payload": {"user": "Gerku", "action": "test-aws"}}' https://2pyjnjib0b.execute-api.us-east-1.amazonaws.com/v1/submit-task
 {"$metadata":{"httpStatusCode":200,"requestId":"7b8a3ed3-8388-516f-aec6-5f9362d5102b","attempts":1,"totalRetryDelay":0},"MD5OfMessageBody":"1bb6b4d568d9e8606030b8ab20e9a368","MessageId":"de1b276c-577c-4d6d-8ed5-6da5ee2a4332"}
 PS C:\Users\Gerku\Documents\Programming_projects\web_applications\Backend_interview_task> curl -X POST -H "Content-Type: application/json" -d '{"taskId": "task-6", "payload": {"user": "Gerku", "action": "test-aws"}}' https://2pyjnjib0b.execute-api.us-east-1.amazonaws.com/v1/submit-task
-{"$metadata":{"httpStatusCode":200,"requestId":"140cd371-fe0f-5c1a-9bb5-b2311f673d5e","attempts":1,"totalRetryDelay":0},"MD5OfMessageBody":"1a071134d7e6de9c6a88d3d96c82d6b6","MessageId":"d2351e0f-c87f-4ed5-b99c-436193a2dcf6"}
-PS C:\Users\Gerku\Documents\Programming_projects\web_applications\Backend_interview_task> 
 
 Logi w aws.amazon.com/cloudwatch (logs/log groups):
 
