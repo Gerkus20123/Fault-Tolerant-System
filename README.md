@@ -1,7 +1,6 @@
 # Fault-Tolerant System v1
 
-To jest skalowalny i odporny na błędy system przetwarzania zadań, zbudowany w oparciu o architekturę event-driven z użyciem usług Amazon Web Services (AWS). System symuluje przetwarzanie danych, gdzie błędy są automatycznie obsługiwane, a zadania, które nie mogą być przetworzone, trafiają do kolejki Dead letter Queue (DLQ).
-W procesie budowania tego systemu wykorzystałem AI do przyspieszenia niektórych etapów, takich jak generowanie początkowego szablonu i debugowanie problemów z konfiguracją. Jednak ostateczne rozwiązanie, a także zrozumienie i poprawienie błędów, było wynikiem moich własnych umiejętności.
+To jest skalowalny i odporny na błędy system przetwarzania zadań, zbudowany w oparciu o architekturę event-driven z użyciem usług Amazon Web Services (AWS). System symuluje przetwarzanie danych, gdzie błędy są automatycznie 
 
 ## 🚀 Wymagania wstępne
 
@@ -77,5 +76,13 @@ Wyślij zadanie do API, aby zobaczyć, jak jest pomyślnie przetwarzane.
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"taskId": "test-1", "payload": {"user": "test-user", "action": "test-success"}}' [URL_TWOJEGO_API_GATEWAY]/submit-task
 ```
+
+ ## 🧠 Wkład sztucznej inteligencji
+Ten projekt został stworzony przy wsparciu sztucznej inteligencji, która pełniła rolę asystenta programistycznego. AI pomagała w:
+
+* Generowaniu struktury projektu: Tworzenie początkowej architektury i plików konfiguracyjnych.
+* Debugowaniu i rozwiązywaniu błędów: Analizowanie logów i sugerowanie poprawek dla błędów wdrożeniowych oraz problemów z kodem.
+* Dokumentacji: Tworzenie opisów architektonicznych i instrukcji testowania.
+Wykorzystanie AI w tym projekcie pozwoliło na szybsze i bardziej efektywne rozwiązanie złożonych problemów technicznych, co jest zgodne z nowoczesnymi praktykami inżynierii oprogramowania.
 
 Aby zobaczyć pełne logi z testowania, przejdź do [pliku logów](test_logs.md).
