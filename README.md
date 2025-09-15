@@ -52,6 +52,7 @@ W procesie budowania tego systemu wykorzystałem AI do przyspieszenia niektóryc
 Wdróż cały stos Serverless, uruchamiając komendę w katalogu projektu:
 ```bash
 serverless deploy
+```
 
 ## 🏗️ Przegląd architektury
 
