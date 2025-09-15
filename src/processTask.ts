@@ -6,13 +6,14 @@ const sqsClient = new SQSClient({ region: 'us-east-1' });
 
 // Główna funkcja handlera, wywoływana przez SQS
 export const handler = async (event: any) => {
+
   // Iteracja przez wiadomości SQS
   for (const record of event.Records) {
     const body = JSON.parse(record.body);
     const { taskId, payload, retryCount } = body;
 
     // Symulacja błędu przetwarzania
-    const isFailure = Math.random() < PROCESSING_FAILURE_RATE;
+    const isFailure = Math.random() < PROCESSING_FAILURE_RATE; // isFailure będzie true z prawdopodobieństwem 30%, false z prawdopodobieństwem 70%
 
     console.log(`[Processor] Picking up task ${taskId} for processing.`);
 
@@ -23,7 +24,6 @@ export const handler = async (event: any) => {
       // Logika przeniesienia zadania do DLQ jest obsługiwana automatycznie przez SQS.
       // SQS automatycznie ponawia próbę (zgodnie z konfiguracją w serverless.yml)
       // i przenosi do DLQ po wyczerpaniu limitu.
-      // Wystarczy, że rzucimy wyjątek, aby Lambda uznała, że zadanie się nie powiodło.
       throw new Error(errorMessage);
 
     } else {

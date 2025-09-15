@@ -2,12 +2,12 @@ service: fault-tolerant-system-v1
 
 provider:
   name: aws
-  runtime: nodejs20.x # Or whatever Node.js version you are using
-  region: us-east-1    # Choose your desired AWS region
-  stage: dev           # Deployment stage
+  runtime: nodejs20.x
+  region: us-east-1    
+  stage: dev          
   environment:
     PROCESSING_FAILURE_RATE: 0.3
-    MAX_RETRIES: 2
+    MAX_RETRIES: 2 # Maksymalna liczba ponowień przed przeniesieniem do DLQ
   profile: serverless-task
   iam:
     role:
@@ -43,7 +43,7 @@ functions:
       - sqs:
           arn:
             Fn::GetAtt: [TaskQueue, Arn] # Connects to the SQS queue
-          batchSize: 1
+          batchSize: 1 # Przetwarzaj jedną wiadomość na raz
 
   dlqMonitor:
     handler: src/dlqMonitor.handler
@@ -68,8 +68,8 @@ resources:
         RedrivePolicy:
           deadLetterTargetArn:
             Fn::GetAtt: [DLQ, Arn]
-          maxReceiveCount: 2
-    DLQ:
+          maxReceiveCount: 2 # Maksymalna liczba ponowień przed przeniesieniem do DLQ
+    DLQ: # Kolejka do przechowywania martwych wiadomości, które nie mogły zostać przetworzone po wielokrotnych próbach
       Type: AWS::SQS::Queue
       Properties:
         QueueName: DLQ
