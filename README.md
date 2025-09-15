@@ -1,4 +1,6 @@
+<div align="center">
 # Fault-Tolerant System v1
+</div>
 
 To jest skalowalny i odporny na błędy system przetwarzania zadań, zbudowany w oparciu o architekturę event-driven z użyciem usług Amazon Web Services (AWS). System symuluje przetwarzanie danych, gdzie błędy są automatycznie 
 
@@ -76,7 +78,7 @@ Wyślij zadanie do API, aby zobaczyć, jak jest pomyślnie przetwarzane.
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"taskId": "test-1", "payload": {"user": "test-user", "action": "test-success"}}' [URL_TWOJEGO_API_GATEWAY]/submit-task
 ```
-Aby zobaczyć pełne logi z testowania, przejdź do [pliku logów](test_logs.md).
+Aby zobaczyć pełne logi z testowania własnego, przejdź do [pliku logów](test_logs.md).
 
  ## 🧠 Wkład sztucznej inteligencji
 Ten projekt został stworzony przy wsparciu sztucznej inteligencji, która pełniła rolę asystenta programistycznego. AI pomagała w:
