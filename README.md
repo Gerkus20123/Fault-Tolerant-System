@@ -78,7 +78,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"taskId": "test-1", "paylo
 ```
 Aby zobaczyć pełne logi z testowania własnego, przejdź do: [submitTask.scv](submitTask_logs.csv),  [processTask.scv](processTask_logs.csv),  [dlqmonitor.scv](dlqmonitor_logs.csv)
 
-albo zobacz uporządkowane w tabeli wraz z wniskami [pliku logów](test_logs.md).
+albo zobacz uporządkowane w tabeli wraz z wnioskami [pliku logów](test_logs.md).
 
  ## 🧠 Wkład sztucznej inteligencji
 Ten projekt został stworzony przy wsparciu sztucznej inteligencji, która pełniła rolę asystenta programistycznego. AI pomagała w:
