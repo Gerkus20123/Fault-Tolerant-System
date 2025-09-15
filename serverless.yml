@@ -1,15 +1,6 @@
 service: fault-tolerant-system-v1
 
 provider:
-<<<<<<< HEAD
-  name: aws
-  runtime: nodejs20.x
-  region: us-east-1    
-  stage: dev          
-  environment:
-    PROCESSING_FAILURE_RATE: 0.3
-    MAX_RETRIES: 2 # Maksymalna liczba ponowień przed przeniesieniem do DLQ
-=======
   name: aws 
   runtime: nodejs20.x
   region: us-east-1    # AWS region
@@ -17,7 +8,6 @@ provider:
   environment:
     PROCESSING_FAILURE_RATE: 0.3 # 30% prawdopodbeństwo błedu
     MAX_RETRIES: 2 # maksymalna liczba powtózeń
->>>>>>> 5b4420ba45ec83b5a72308fa838b64e86f85806e
   profile: serverless-task
   iam:
     role:
@@ -52,13 +42,8 @@ functions:
     events:
       - sqs:
           arn:
-<<<<<<< HEAD
             Fn::GetAtt: [TaskQueue, Arn] # Connects to the SQS queue
           batchSize: 1 # Przetwarzaj jedną wiadomość na raz
-=======
-            Fn::GetAtt: [TaskQueue, Arn] # Połączenie z SQS
-          batchSize: 1
->>>>>>> 5b4420ba45ec83b5a72308fa838b64e86f85806e
 
   dlqMonitor:
     handler: src/dlqMonitor.handler
