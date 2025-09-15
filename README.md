@@ -13,17 +13,45 @@ W procesie budowania tego systemu wykorzystałem AI do przyspieszenia niektóryc
 
 ## 🛠️ Instrukcje konfiguracji i wdrożenia
 
-1.  **Sklonuj repozytorium** na swój lokalny komputer.
-2.  Przejdź do katalogu projektu.
-3.  Zainstaluj zależności npm:
+1.  **Zaloguj się** do konsoli AWS.
+2.  Przejdź do serwisu **IAM** (Identity and Access Management).
+3.  Stwórz nowego **użytkownika IAM** i nadaj mu uprawnienia `AdministratorAccess` (dla uproszczenia w celach deweloperskich).
+4.  Wygeneruj **klucze dostępu** (Access Key ID i Secret Access Key) dla tego użytkownika.
+5.  Zainstaluj **AWS CLI** i skonfiguruj go za pomocą wygenerowanych kluczy. Otwórz terminal i wprowadź:
+    ```bash
+    aws configure
+    ```
+    Postępuj zgodnie z instrukcjami, wprowadzając swoje klucze i wybierając domyślny region (np. `us-east-1`).
+
+---
+
+### 2. Instalacja Serverless Framework i zależności
+
+1.  Zainstaluj **Serverless Framework** globalnie:
+    ```bash
+    npm install -g serverless
+    ```
+2.  **Sklonuj** repozytorium na swój komputer.
+3.  Przejdź do katalogu projektu.
+4.  Zainstaluj zależności npm:
     ```bash
     npm install
     ```
-4.  Wdróż cały stos Serverless na AWS:
-    ```bash
-    serverless deploy
+5.  Jeśli używasz specyficznego profilu AWS, zdefiniuj go w pliku `serverless.yml`:
+    ```yaml
+    provider:
+      name: aws
+      profile: nazwa-twojego-profilu
+      ...
     ```
-    Po wdrożeniu w konsoli pojawi się URL do punktu końcowego API.
+
+---
+
+### 3. Wdrożenie na AWS
+
+Wdróż cały stos Serverless, uruchamiając komendę w katalogu projektu:
+```bash
+serverless deploy
 
 ## 🏗️ Przegląd architektury
 
