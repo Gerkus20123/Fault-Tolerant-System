@@ -1,4 +1,4 @@
-Logi w VSC:
+1. Logi w VSC:
 
 | Żądanie	| ID Zadania	| Odpowiedź API Gateway / SQS	| Wniosek | 
 | :--- | :--- | :--- | :--- |
@@ -9,7 +9,7 @@ Logi w VSC:
 | curl ... task-nr_5 |	task-nr_5 |	{"$metadata":{"httpStatusCode":200,"...},"MessageId":"fae1877d-782a..."} |	Sukces. Kolejne zadanie zostało wysłane. |
 | curl ... task-nr_6 |	task-nr_6 |	{"$metadata":{"httpStatusCode":200,"...},"MessageId":"31c205be-44a2..."} |	Sukces. Kolejne zadanie zostało wysłane. |
 
-Logi w aws.amazon.com/cloudwatch (logs/log groups) (submitTask):
+2. Logi w aws.amazon.com/cloudwatch (logs/log groups) (submitTask):
 
 | Data i czas (lokalny: +02:00) |	ID żądania (Request ID) |	Czas trwania (Duration) |	Status	| Wniosek |
 | :--- | :--- | :--- | :--- | :--- |
@@ -20,7 +20,7 @@ Logi w aws.amazon.com/cloudwatch (logs/log groups) (submitTask):
 | 2025-09-15T09:53:11.514+02:00	| 7187d090...	| 9.78 ms	| END	| Zoptymalizowany czas trwania. |
 | 2025-09-15T09:53:20.452+02:00	| 2f720efd...	| 12.66 ms	| END	| Zoptymalizowany czas trwania. |
 
-Logi w aws.amazon.com/cloudwatch (logs/log groups) (processTask):
+3. Logi w aws.amazon.com/cloudwatch (logs/log groups) (processTask):
 
 | Data | ID Zadania |	Logi CloudWatch | Wniosek | 
 | :--- | :--- | :--- | :--- |
@@ -31,7 +31,7 @@ Logi w aws.amazon.com/cloudwatch (logs/log groups) (processTask):
 | 2025-09-15T09:53:11.534+02:00 | `task-nr_5`	| `INFO [Processor] Picking up task task-nr_5...<br>INFO [Processor] Task task-nr_5 processed successfully.`	| Pomyślne przetworzenie. | 
 | 2025-09-15T09:53:20.479+02:00 | `task-nr_6`	| `INFO [Processor] Picking up task task-nr_6...<br>INFO [Processor] Task task-nr_6 processed successfully.`	| Pomyślne przetworzenie. | 
 
-Logi w aws.amazon.com/cloudwatch (logs/log groups) (dlqMonitor):
+4. Logi w aws.amazon.com/cloudwatch (logs/log groups) (dlqMonitor):
 
 | Data i czas (lokalny: +02:00)	| ID Zadania	| Detale	| Wniosek | 
 | :--- | :--- | :--- | :--- |
