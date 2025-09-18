@@ -1,6 +1,6 @@
 # Fault-Tolerant System v1
 
-To jest skalowalny i odporny na błędy system przetwarzania zadań, zbudowany w oparciu o architekturę event-driven z użyciem usług Amazon Web Services (AWS). System symuluje przetwarzanie danych, gdzie błędy są automatycznie 
+Zaprojektowałem i zaimplementowałem skalowalny i odporny na błędy system backendu w Typescript, oparty na architekturze event-driven. Głównym celem projektu rekrutacyjengo było stworzenie niezawodnej aplikacji, która jest w stanie obsługiwać błędy i ponawiać próby przetwarzania bez utraty danych, co jest kluczowe w systemach produkcyjnych.
 
 ## 🚀 Wymagania wstępne
 
