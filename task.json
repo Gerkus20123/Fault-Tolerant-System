@@ -1,0 +1,6 @@
+{
+  "taskId": "task-123",
+  "payload": {
+    "data": "important information"
+  }
+}

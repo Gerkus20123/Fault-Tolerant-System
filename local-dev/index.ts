@@ -1,3 +1,4 @@
+
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 
@@ -37,9 +38,11 @@ console.log("System initialization started...");
 // --- API Endpoint ---
 // Step 1: Task Submission
 app.post('/submit-task', (req: Request, res: Response) => {
+    // TypeScript can now correctly validate the body's type because of the imported Request interface.
     const { taskId, payload } = req.body as { taskId: string; payload: TaskPayload };
-    
+
     if (!taskId || !payload) {
+        // TypeScript now recognizes res.status() because of the imported Response interface.
         return res.status(400).send({ message: 'taskId and payload are required.' });
     }
 
@@ -79,7 +82,7 @@ const processQueue = () => {
     }
 
     const task = taskQueue.shift();
-    
+
     if (!task) return;
 
     console.log(`[Processor] Picking up task ${task.taskId} for processing.`);
