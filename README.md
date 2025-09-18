@@ -26,6 +26,30 @@ Zaprojektowałem i zaimplementowałem skalowalny i odporny na błędy system bac
 
 ### 2. Instalacja Serverless Framework i zależności
 
+Localnie:
+1. Sklonuj repozytorium na swój komputer.
+2. Przejdź do katalogu projektu w swoim terminalu.
+3. Zainstaluj zależności projektu, które są potrzebne do działania aplikacji.
+```Bash
+npm install
+```
+4. Skompiluj kod TypeScript. Kompilator przetworzy pliki w katalogu local-dev i utworzy gotowy do uruchomienia kod JavaScript w folderze dist.
+
+```Bash
+npm run build
+```
+5. Uruchom serwer lokalnie. Powinieneś zobaczyć komunikat w terminalu, który potwierdza, że serwer jest uruchomiony i gotowy.
+
+```Bash
+npm start
+```
+6. Otwórz nowe okno terminala, aby wysłać zadanie do serwera. Przejdź do katalogu projektu i następnie wyszli następującą komendę:
+```bash
+Invoke-RestMethod -Uri http://localhost:3000/submit-task -Method Post -ContentType "application/json" -Body (Get-Content -Path task.json -Raw)
+```
+Uwaga: zawartość task.json można zmeniać.
+
+AWS:
 1.  Zainstaluj **Serverless Framework** globalnie:
     ```bash
     npm install -g serverless
