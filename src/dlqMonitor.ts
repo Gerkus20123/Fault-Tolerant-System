@@ -9,7 +9,7 @@ export const handler = async (event: any) => {
 
     console.log(`- Task ID: ${taskId}`);
     console.log(`  Payload: ${JSON.stringify(payload)}`);
-    console.log(`  Error: ${error}`);
+    console.error(`  Error: ${error}`);
     console.log(`  Timestamp: ${timestamp}`);
   }
 

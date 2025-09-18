@@ -1,4 +1,5 @@
 "use strict";
+
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -10,11 +11,13 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
 }));
+
 var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
     Object.defineProperty(o, "default", { enumerable: true, value: v });
 }) : function(o, v) {
     o["default"] = v;
 });
+
 var __importStar = (this && this.__importStar) || (function () {
     var ownKeys = function(o) {
         ownKeys = Object.getOwnPropertyNames || function (o) {
@@ -32,14 +35,17 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importStar(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
 const port = 3000;
+
 app.use(body_parser_1.default.json());
 // Main task queue (simulating SQS)
 const taskQueue = [];
@@ -48,8 +54,9 @@ const dlq = [];
 const MAX_RETRIES = 2;
 const PROCESSING_FAILURE_RATE = 0.3;
 console.log("System initialization started...");
+
 // --- API Endpoint ---
-// Step 1: Task Submission
+// Step 1: Task Submission (POST /submit-task)
 app.post('/submit-task', (req, res) => {
     const { taskId, payload } = req.body;
     if (!taskId || !payload) {
@@ -65,6 +72,7 @@ app.post('/submit-task', (req, res) => {
     console.log(`[API] Task ${taskId} submitted to queue.`);
     res.status(202).send({ message: 'Task accepted for processing.' });
 });
+
 // --- Task Processing Logic ---
 // Step 2 & 3: Task Processing & Failure Handling
 const processTask = (task) => {
@@ -84,6 +92,7 @@ const processTask = (task) => {
         }, 1000); // Simulate processing time
     });
 };
+
 const processQueue = () => {
     if (taskQueue.length === 0) {
         return;
@@ -119,6 +128,7 @@ const processQueue = () => {
         }
     });
 };
+
 // --- Monitoring DLQ ---
 // Step 4: DLQ Monitoring
 const monitorDLQ = () => {
@@ -135,11 +145,14 @@ const monitorDLQ = () => {
         dlq.length = 0;
     }
 };
+
 // Start processing the queue periodically
 setInterval(processQueue, 500);
+
 // --- Server Start ---
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
     console.log("System is ready to accept tasks. Simulate failures by submitting tasks.");
 });
+
 //# sourceMappingURL=index.js.map

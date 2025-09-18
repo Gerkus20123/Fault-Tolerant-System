@@ -79,6 +79,7 @@ const processQueue = () => {
     }
 
     const task = taskQueue.shift();
+    
     if (!task) return;
 
     console.log(`[Processor] Picking up task ${task.taskId} for processing.`);
