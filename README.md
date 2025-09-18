@@ -95,6 +95,12 @@ Aby przetestować system, użyj `curl` lub innej aplikacji, takiej jak Postman, 
 
 Wyślij zadanie do API, aby zobaczyć, jak jest pomyślnie przetwarzane.
 
+Lokalnie:
+```bash
+Invoke-RestMethod -Uri http://localhost:3000/submit-task -Method Post -ContentType "application/json" -Body (Get-Content -Path task.json -Raw)
+````
+
+AWS:
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"taskId": "test-1", "payload": {"user": "test-user", "action": "test-success"}}' [URL_TWOJEGO_API_GATEWAY]/submit-task
 ```
@@ -107,8 +113,8 @@ W ramach tego projektu wykorzystałem narzędzia AI jako asystenta programistycz
 
 ## Rreview:
 
-![Zrzut ekranu](1.png)
+![Zrzut ekranu](preview_github/1.png)
 
-![Zrzut ekranu](2.png)
+![Zrzut ekranu](preview_github/2.png)
 
-![Zrzut ekranu](3.png)
+![Zrzut ekranu](preview_github/3.png)
