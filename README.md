@@ -1,6 +1,6 @@
 # Fault-Tolerant System v1
 
-Zaprojektowałem i zaimplementowałem skalowalny i odporny na błędy system backendu w Typescript, oparty na architekturze event-driven. Głównym celem projektu rekrutacyjengo było stworzenie niezawodnej aplikacji, która jest w stanie obsługiwać błędy i ponawiać próby przetwarzania bez utraty danych, co jest kluczowe w systemach produkcyjnych.
+Zaprojektowałem i zaimplementowałem skalowalny i odporny na błędy system backendu w **Typescript**, oparty na architekturze event-driven. Aplikacja została zaimplementowana w dwóch wariantach: w pełni funkcjonalnym wdrożeniu na **AWS** oraz jako lokalna, niezależna od chmury symulacja z użyciem **Node.js** i **Express**. Dzięki temu rozwiązanie jest elastyczne i można je łatwo uruchomić zarówno w środowisku produkcyjnym, jak i do celów deweloperskich.
 
 ## 🚀 Wymagania wstępne
 
