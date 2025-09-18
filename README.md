@@ -10,7 +10,7 @@ Zaprojektowałem i zaimplementowałem skalowalny i odporny na błędy system bac
 * **Serverless Framework**
 * Skonfigurowane konto AWS z uprawnieniami do tworzenia zasobów (IAM, Lambda, SQS, API Gateway).
 
-## 🛠️ Instrukcje konfiguracji i wdrożenia
+## 🛠️ Instrukcje konfiguracji i wdrożenia na AWS
 
 1.  **Zaloguj się** do konsoli AWS.
 2.  Przejdź do serwisu **IAM** (Identity and Access Management).
@@ -24,7 +24,7 @@ Zaprojektowałem i zaimplementowałem skalowalny i odporny na błędy system bac
 
 ---
 
-### 2. Instalacja Serverless Framework i zależności
+### 2. Jak uruchumić i testować aplikację
 
 Localnie:
 1. Sklonuj repozytorium na swój komputer.
@@ -70,9 +70,7 @@ AWS:
 
 ---
 
-### 3. Wdrożenie na AWS
-
-Wdróż cały stos Serverless, uruchamiając komendę w katalogu projektu:
+6. Wdróż cały stos Serverless, uruchamiając komendę w katalogu projektu:
 ```bash
 serverless deploy
 ```
