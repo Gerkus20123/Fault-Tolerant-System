@@ -81,12 +81,7 @@ Aby zobaczyć pełne logi z testowania własnego, przejdź do: [submitTask.scv](
 albo zobacz uporządkowane w tabeli wraz z wnioskami [pliku logów](test_logs.md).
 
  ## 🧠 Wkład sztucznej inteligencji
-Ten projekt został stworzony przy wsparciu sztucznej inteligencji, która pełniła rolę asystenta programistycznego. AI pomagała w:
-
-* Generowaniu struktury projektu: Tworzenie początkowej architektury i plików konfiguracyjnych.
-* Debugowaniu i rozwiązywaniu błędów: Analizowanie logów i sugerowanie poprawek dla błędów wdrożeniowych oraz problemów z kodem.
-* Dokumentacji: Tworzenie opisów architektonicznych i instrukcji testowania.
-Wykorzystanie AI w tym projekcie pozwoliło na szybsze i bardziej efektywne rozwiązanie złożonych problemów technicznych, co jest zgodne z nowoczesnymi praktykami inżynierii oprogramowania.
+W ramach tego projektu wykorzystałem narzędzia AI jako asystenta programistycznego, co znacznie przyspieszyło proces tworzenia i optymalizacji kodu. Narzędzia te pomogły mi w generowaniu podstawowej architektury i plików konfiguracyjnych, efektywnym debugowaniu oraz tworzeniu czytelnej dokumentacji. Dzięki temu mogłem skupić się na rozwiązaniach kluczowych problemów, co jest zgodne z nowoczesnymi praktykami inżynierii oprogramowania.
 
 ## Rreview:
 
