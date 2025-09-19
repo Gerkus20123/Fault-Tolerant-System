@@ -86,6 +86,7 @@ System składa się z trzech głównych komponentów w pełni zarządzanych prze
 * **dlqMonitor Lambda**: Funkcja, która monitoruje kolejkę DLQ i loguje szczegóły nieprzetworzonych zadań do CloudWatch, aby umożliwić ich dalszą inspekcję.
 
 ![diagram architektury](Diagram_architektury.png)
+Zgenerowane za pomocą Google Gemini.
 
 ## 🧪 5. Instrukcje testowania
 
