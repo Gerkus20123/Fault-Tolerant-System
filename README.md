@@ -85,7 +85,7 @@ System składa się z trzech głównych komponentów w pełni zarządzanych prze
 * **processTask Lambda**: Funkcja, która nasłuchuje na "TaskQueue" i asynchronicznie przetwarza zadania. Symuluje błędy, aby przetestować odporność systemu na awarie.
 * **dlqMonitor Lambda**: Funkcja, która monitoruje kolejkę DLQ i loguje szczegóły nieprzetworzonych zadań do CloudWatch, aby umożliwić ich dalszą inspekcję.
 
-
+![diagram architektury](Diagram_architektury.png)
 
 ## 🧪 5. Instrukcje testowania
 
