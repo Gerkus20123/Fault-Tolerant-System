@@ -24,7 +24,7 @@ Zaprojektowałem i zaimplementowałem skalowalny i odporny na błędy system bac
 
 ---
 
-### ▶️ 3. Jak uruchumić i testować aplikację
+## ▶️ 3. Jak uruchumić i testować aplikację
 
 3.1. Localnie:
 
