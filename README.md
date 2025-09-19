@@ -22,8 +22,6 @@ Zaprojektowałem i zaimplementowałem skalowalny i odporny na błędy system bac
     ```
     Postępuj zgodnie z instrukcjami, wprowadzając swoje klucze i wybierając domyślny region (np. `us-east-1`).
 
----
-
 ## ▶️ 3. Jak uruchumić i testować aplikację
 
 3.1. Localnie:
