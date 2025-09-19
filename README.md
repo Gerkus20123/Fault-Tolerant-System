@@ -113,8 +113,11 @@ W ramach tego projektu wykorzystałem narzędzia AI jako asystenta programistycz
 
 ## 🔍 7. Rreview:
 
+1. AWS/API Gateway/APis:
 ![Zrzut ekranu](preview_github/1.png)
 
+2. AWS/API Gateway/APIs/dev-fault-tolerant-system-v1 (2pyjnjib0b):
 ![Zrzut ekranu](preview_github/2.png)
 
+3. AWS/API Gateway/APIs/dev-fault-tolerant-system-v1 (2pyjnjib0b)/submit-task - POST - Method execution:
 ![Zrzut ekranu](preview_github/3.png)
