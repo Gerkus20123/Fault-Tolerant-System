@@ -111,7 +111,7 @@ albo zobacz uporządkowane w tabeli wraz z wnioskami [pliku logów](test_logs.md
  ## 🧠 6. Wkład sztucznej inteligencji
 W ramach tego projektu wykorzystałem narzędzia AI jako asystenta programistycznego, co znacznie przyspieszyło proces tworzenia i optymalizacji kodu. Narzędzia te pomogły mi w generowaniu podstawowej architektury i plików konfiguracyjnych, efektywnym debugowaniu oraz tworzeniu czytelnej dokumentacji. Dzięki temu mogłem skupić się na rozwiązaniach kluczowych problemów, co jest zgodne z nowoczesnymi praktykami inżynierii oprogramowania.
 
-## Rreview:
+## 🔍 7. Rreview:
 
 ![Zrzut ekranu](preview_github/1.png)
 
