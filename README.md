@@ -2,7 +2,7 @@
 
 Zaprojektowałem i zaimplementowałem skalowalny i odporny na błędy system backendu w **Typescript**, oparty na architekturze event-driven. Aplikacja została zaimplementowana w dwóch wariantach: w pełni funkcjonalnym wdrożeniu na **AWS** oraz jako lokalna, niezależna od chmury symulacja z użyciem **Node.js** i **Express**. Dzięki temu rozwiązanie jest elastyczne i można je łatwo uruchomić zarówno w środowisku produkcyjnym, jak i do celów deweloperskich.
 
-## 🚀 Wymagania wstępne
+## 🚀 1. Wymagania wstępne
 
 * **Node.js** (v14.x lub nowszy)
 * **npm**
@@ -10,7 +10,7 @@ Zaprojektowałem i zaimplementowałem skalowalny i odporny na błędy system bac
 * **Serverless Framework**
 * Skonfigurowane konto AWS z uprawnieniami do tworzenia zasobów (IAM, Lambda, SQS, API Gateway).
 
-## 🛠️ Instrukcje konfiguracji i wdrożenia na AWS
+## 🛠️ 2. Instrukcje konfiguracji i wdrożenia na AWS
 
 1.  **Zaloguj się** do konsoli AWS.
 2.  Przejdź do serwisu **IAM** (Identity and Access Management).
@@ -24,9 +24,10 @@ Zaprojektowałem i zaimplementowałem skalowalny i odporny na błędy system bac
 
 ---
 
-### 2. Jak uruchumić i testować aplikację
+### ▶️ 3. Jak uruchumić i testować aplikację
 
-Localnie:
+3.1. Localnie:
+
 1. Sklonuj repozytorium na swój komputer.
 2. Przejdź do katalogu projektu w swoim terminalu.
 3. Zainstaluj zależności projektu, które są potrzebne do działania aplikacji.
@@ -49,7 +50,8 @@ Invoke-RestMethod -Uri http://localhost:3000/submit-task -Method Post -ContentTy
 ```
 Uwaga: zawartość task.json można zmeniać.
 
-AWS:
+3.2. AWS:
+
 1.  Zainstaluj **Serverless Framework** globalnie:
     ```bash
     npm install -g serverless
@@ -75,7 +77,7 @@ AWS:
 serverless deploy
 ```
 
-## 🏗️ Przegląd architektury
+## 🏗️ 4. Przegląd architektury
 
 System składa się z trzech głównych komponentów w pełni zarządzanych przez AWS:
 
@@ -87,7 +89,7 @@ System składa się z trzech głównych komponentów w pełni zarządzanych prze
 
 
 
-## 🧪 Instrukcje testowania
+## 🧪 5. Instrukcje testowania
 
 Aby przetestować system, użyj `curl` lub innej aplikacji, takiej jak Postman, aby wysłać żądanie POST do punktu końcowego API.
 
@@ -108,7 +110,7 @@ Aby zobaczyć pełne logi z testowania własnego, przejdź do: [submitTask.scv](
 
 albo zobacz uporządkowane w tabeli wraz z wnioskami [pliku logów](test_logs.md).
 
- ## 🧠 Wkład sztucznej inteligencji
+ ## 🧠 6. Wkład sztucznej inteligencji
 W ramach tego projektu wykorzystałem narzędzia AI jako asystenta programistycznego, co znacznie przyspieszyło proces tworzenia i optymalizacji kodu. Narzędzia te pomogły mi w generowaniu podstawowej architektury i plików konfiguracyjnych, efektywnym debugowaniu oraz tworzeniu czytelnej dokumentacji. Dzięki temu mogłem skupić się na rozwiązaniach kluczowych problemów, co jest zgodne z nowoczesnymi praktykami inżynierii oprogramowania.
 
 ## Rreview:
